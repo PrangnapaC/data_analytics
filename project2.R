@@ -11,7 +11,7 @@ library(extrafont)
 library(ggrepel)
 
 #read and select data
-thai_airports <- read_xlsx("thai_airports.xlsx")
+thai_airports <- read_csv("thai_airports.csv")
 
 #create new df from riem weather data
 summer_weather <- map_df(thai_airports$ICAO, riem_measures,
