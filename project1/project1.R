@@ -64,7 +64,7 @@ ggplot(data = daily_activity_minutes) +
 #read and select sleep data
 sleepDay <- read_csv("sleepDay_merged.csv")
 cleaned_sleep_day <- clean_names(sleepDay)
-str(cleaned_sleep_day)
+#str(cleaned_sleep_day)
 
 sleep_edit <- cleaned_sleep_day %>%
   separate(sleep_day, c("date","time")," ")
@@ -93,6 +93,8 @@ activity_sleep %>%
   ylab("n") +
   ggtitle("Calories burned")
 
+activity_sleep$total_hrs_asleep = activity_sleep$total_minutes_asleep/60
+
 activity_sleep %>% 
   summarise(id , total_hrs_asleep, user) %>% 
   ggplot(aes(total_hrs_asleep)) + 
@@ -101,8 +103,6 @@ activity_sleep %>%
   xlab("Sleep hours") +
   ylab("n") +
   ggtitle("Sleep hours")
-
-activity_sleep$total_hrs_asleep = activity_sleep$total_minutes_asleep/60
 
 #summary(activity_sleep)
 
