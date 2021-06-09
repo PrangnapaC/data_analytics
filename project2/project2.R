@@ -103,7 +103,7 @@ ggplot(humidity,
   geom_point(shape = 19, size = 2) +
   scale_color_gradient(low="darkorange", high="royalblue", name ="Humidity") +
   geom_text_repel(aes(label = City, fontface = "bold"),
-                  max.iter = 50000) +
+                  max.iter = 50000, max.overlaps = 100) +
   ggtitle("Most humid cities during non-rainy seasons in Thailand",
           subtitle = "In percentage (%)") +
   labs(caption = "Data source: Airports weather stations in Thailand, 2020-2021") +
