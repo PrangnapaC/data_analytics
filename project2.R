@@ -9,7 +9,7 @@ library(magrittr)
 library(comf)
 library(extrafont)
 library(ggrepel)
-
+  
 #read and select data
 thai_airports <- read_csv("thai_airports.csv")
 
